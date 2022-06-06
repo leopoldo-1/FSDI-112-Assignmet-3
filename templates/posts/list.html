@@ -4,7 +4,15 @@
 
 {% block content %}
   <h1>Posts</h1>
-  <ul>
+
+  {% for post in post_list %}
+  <li class="list-group" style="width: 40%">
+    <a href="{% url 'post_detail' post.id %}" class="list-group-item list-group-item-action">          {{post.title}}
+    </a>
+  </li>
+  {% endfor %}
+
+  <!-- <ul>
     {% for post in post_list %}
       <li>
         <a href="{% url 'post_detail' post.id %}">
@@ -12,5 +20,5 @@
         </a>
       </li>
     {% endfor %}
-  </ul>
+  </ul> -->
 {% endblock content %}
